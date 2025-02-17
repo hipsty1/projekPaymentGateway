@@ -6,6 +6,7 @@ using namespace std;
 //deklarasi
 int saldo = 0;
 string username, password;
+int pilih;
 
 //data
 //data nama stand
@@ -26,13 +27,12 @@ int topUp[6] = {5000, 10000, 20000, 25000, 50000, 100000};
 //prototype
 void login();
 void profile();
+void topup();
 
 int main(){
     int pilih;
     login();
-    do{
-        profile();
-    }while (pilih=3);
+    topup();
     return 0;
 }
 
@@ -61,4 +61,18 @@ void profile(){
     cout << setfill('=') << setw(40) << "=" << endl;
     cout << "PILIH : "; cin >> pilih;
     system("pause");
+
+}
+
+void topup(){
+    system("cls");
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(16) << " " << "TOP UP" << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    for (int i = 0; i < 6; i++)
+    {
+        cout << i+1 << ". " << topUp[i] << endl;
+    }
+    
+
 }
