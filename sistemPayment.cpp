@@ -4,9 +4,10 @@
 using namespace std;
 
 //deklarasi
-int saldo = 0, pilih;
+int saldo = 0;
+char pilih;
 string username, password;
-int pilih;
+
 
 //data
 //data nama stand
@@ -28,22 +29,11 @@ int topUp[6] = {5000, 10000, 20000, 25000, 50000, 100000};
 void login();
 void profile();
 void tambahSaldo();
+void menuKantin();
 
 int main(){
     login();
     profile();
-    switch(pilih){
-        case 1:
-        tambahSaldo();
-        break;
-
-        case 2:
-        break;
-
-        case 3:
-        exit(0);
-        break;
-    }
     return 0;
 }
 
@@ -59,24 +49,87 @@ void login(){
 }
 
 void profile(){
-    do{
+    system("cls");
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(16) << " " << "PROFILE" << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << "NAME\t: " << username << endl;
+    cout << "SALDO\t: " << saldo << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << "1. TOP UP" << endl;
+    cout << "2. BUY" << endl;
+    cout << "3. LOG OUT" << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << "PILIH : "; cin >> pilih;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    system("pause");
+    switch(pilih){
+        case '1':
+        tambahSaldo();
+        break;
+
+        case '2':
+        menuKantin();
+        break;
+
+        case '3':
+        exit(0);
+        break;
+
+        default:
         system("cls");
         cout << setfill('=') << setw(40) << "=" << endl;
-        cout << setfill(' ') << setw(16) << " " << "PROFILE" << endl;
-        cout << setfill('=') << setw(40) << "=" << endl;
-        cout << "NAME\t: " << username << endl;
-        cout << "SALDO\t: " << saldo << endl;
-        cout << setfill('=') << setw(40) << "=" << endl;
-        cout << "1. TOP UP" << endl;
-        cout << "2. BUY" << endl;
-        cout << "3. LOG OUT" << endl;
-        cout << setfill('=') << setw(40) << "=" << endl;
-        cout << "PILIH : "; cin >> pilih;
+        cout << setfill(' ') << setw(13) << " " << "INVALID MENU" << endl << setw(12) << " " << "PLEASE TRY AGAIN" << endl;
         cout << setfill('=') << setw(40) << "=" << endl;
         system("pause");
-    }while(pilih>3||pilih<1);
+        profile();
+    }
 }
 
 void tambahSaldo(){
 
+}
+
+void menuKantin(){
+    system("cls");
+    //kantin1
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(10) << kantin[0] << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    for(int i = 0; i < 8; i++){
+        cout << kantin1[i].namaMkn << " " << endl;
+    }
+    cout << setfill('=') << setw(40) << "=" << endl << endl;
+    //kantin2
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(10) << kantin[1] << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    for(int i = 0; i < 8; i++){
+        cout << kantin1[i].namaMkn << " " << endl;
+    }
+    cout << setfill('=') << setw(40) << "=" << endl << endl;
+    //kantin3
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(10) << kantin[2] << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    for(int i = 0; i < 8; i++){
+        cout << kantin1[i].namaMkn << " " << endl;
+    }
+    cout << setfill('=') << setw(40) << "=" << endl << endl;
+    //kantin4
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(10) << kantin[3] << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    for(int i = 0; i < 8; i++){
+        cout << kantin1[i].namaMkn << " " << endl;
+    }
+    cout << setfill('=') << setw(40) << "=" << endl << endl;
+    //kantin5
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(10) << kantin[4] << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    for(int i = 0; i < 8; i++){
+        cout << kantin1[i].namaMkn << " " << endl;
+    }
+    cout << setfill('=') << setw(40) << "=" << endl;
 }
