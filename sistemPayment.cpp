@@ -4,6 +4,7 @@
 using namespace std;
 
 //deklarasi
+int saldo = 0;
 string username, password;
 
 //data
@@ -22,6 +23,42 @@ menu kantin5 [8] = {{"Indomie Goreng Kornet", 10000}, {"Indomie rebus Kornet", 1
 //data menu top up
 int topUp[6] = {5000, 10000, 20000, 25000, 50000, 100000};
 
+//prototype
+void login();
+void profile();
+
 int main(){
+    int pilih;
+    login();
+    do{
+        profile();
+    }while (pilih=3);
     return 0;
+}
+
+void login(){
+    system("cls");
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(17) << " " << "LOGIN" << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << "Masukkan Username : "; getline(cin, username);
+    cout << "Masukkan Password : "; getline(cin, password);
+    cout << setfill('=') << setw(40) << "=" << endl;
+    system("pause");
+}
+
+void profile(){
+    system("cls");
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(16) << " " << "PROFILE" << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << "NAME\t: " << username << endl;
+    cout << "SALDO\t: " << saldo << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << "1. TOP UP" << endl;
+    cout << "2. BUY" << endl;
+    cout << "3. LOG OUT" << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << "PILIH : "; cin >> pilih;
+    system("pause");
 }
