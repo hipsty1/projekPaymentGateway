@@ -87,7 +87,103 @@ void profile(){
 }
 
 void tambahSaldo(){
+    system("cls");
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << setfill(' ') << setw(16) << " " << "TOP UP" << endl;
+    cout << setfill('=') << setw(40) << "=" << endl;
 
+    for (int i = 0; i < 6; i++)
+    {
+        cout << i+1 << ". " << topUp[i] << endl;
+    }
+    cout << setfill('=') << setw(40) << "=" << endl;
+    cout << "Pilih Jumlah TopUp : "; cin >> pilihTopUp;
+    switch (pilihTopUp)
+    {
+    case 1:
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << setfill(' ') << setw(20) << "TOPUP BERHASILL" << endl;
+        cout << setfill(' ') << setw(20) << "Sebesar " << topUp[0] << endl;
+        cout << endl <<  endl;
+        saldo+= 5000;
+        cout << "\tSaldo saat ini\t: " << saldo << endl;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        break;
+    
+    case 2:
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << setfill(' ') << setw(20) << "TOPUP BERHASILL" << endl;
+        cout << setfill(' ') << setw(20) << "Sebesar " << topUp[1] << endl;
+        cout << endl <<  endl;
+        saldo+= 10000;
+        cout << "\tSaldo saat ini\t: " << saldo << endl;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        break;
+    
+    case 3:
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << setfill(' ') << setw(20) << "TOPUP BERHASILL" << endl;
+        cout << setfill(' ') << setw(20) << "Sebesar " << topUp[2] << endl;
+        cout << endl <<  endl;
+        saldo+= 20000;
+        cout << "\tSaldo saat ini\t: " << saldo << endl;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        break;
+    
+    case 4:
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << setfill(' ') << setw(20) << "TOPUP BERHASILL" << endl;
+        cout << setfill(' ') << setw(20) << "Sebesar " << topUp[3] << endl;
+        cout << endl <<  endl;
+        saldo+= 25000;
+        cout << "\tSaldo saat ini\t: " << saldo << endl;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        break;
+    
+    case 5:
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << setfill(' ') << setw(20) << "TOPUP BERHASILL" << endl;
+        cout << setfill(' ') << setw(20) << "Sebesar " << topUp[4] << endl;
+        cout << endl <<  endl;
+        saldo+= 50000;
+        cout << "\tSaldo saat ini\t: " << saldo << endl;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        break;
+    
+    case 6:
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << setfill(' ') << setw(20) << "TOPUP BERHASILL" << endl;
+        cout << setfill(' ') << setw(20) << "Sebesar " << topUp[5] << endl;
+        cout << endl <<  endl;
+        saldo+= 100000;
+        cout << "\tSaldo saat ini\t: " << saldo << endl;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        break;
+        
+        
+        default:
+        system("cls");
+        cout << "salah blog" << endl;
+        system("pause");
+        tambahSaldo();
+        break;
+    }
+
+    cout << "Apakah anda ingin TopUp? (y/n) : "; cin >> pilih;
+    if (pilih == 'y' || pilih == 'Y')
+    {
+        tambahSaldo();
+    }else if (pilih == 'n' || pilih == 'N')
+    {
+        profile();
+    }
+    else
+    {
+        cout << "salah blog" << endl;
+        system("pause");
+        tambahSaldo();
+    }
+    
 }
 
 void menuKantin(){
