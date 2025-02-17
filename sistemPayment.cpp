@@ -4,7 +4,7 @@
 using namespace std;
 
 //deklarasi
-int saldo = 0;
+int saldo = 0, pilih;
 string username, password;
 int pilih;
 
@@ -27,12 +27,23 @@ int topUp[6] = {5000, 10000, 20000, 25000, 50000, 100000};
 //prototype
 void login();
 void profile();
-void topup();
+void tambahSaldo();
 
 int main(){
-    int pilih;
     login();
-    topup();
+    profile();
+    switch(pilih){
+        case 1:
+        tambahSaldo();
+        break;
+
+        case 2:
+        break;
+
+        case 3:
+        exit(0);
+        break;
+    }
     return 0;
 }
 
@@ -48,31 +59,24 @@ void login(){
 }
 
 void profile(){
-    system("cls");
-    cout << setfill('=') << setw(40) << "=" << endl;
-    cout << setfill(' ') << setw(16) << " " << "PROFILE" << endl;
-    cout << setfill('=') << setw(40) << "=" << endl;
-    cout << "NAME\t: " << username << endl;
-    cout << "SALDO\t: " << saldo << endl;
-    cout << setfill('=') << setw(40) << "=" << endl;
-    cout << "1. TOP UP" << endl;
-    cout << "2. BUY" << endl;
-    cout << "3. LOG OUT" << endl;
-    cout << setfill('=') << setw(40) << "=" << endl;
-    cout << "PILIH : "; cin >> pilih;
-    system("pause");
-
+    do{
+        system("cls");
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << setfill(' ') << setw(16) << " " << "PROFILE" << endl;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << "NAME\t: " << username << endl;
+        cout << "SALDO\t: " << saldo << endl;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << "1. TOP UP" << endl;
+        cout << "2. BUY" << endl;
+        cout << "3. LOG OUT" << endl;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        cout << "PILIH : "; cin >> pilih;
+        cout << setfill('=') << setw(40) << "=" << endl;
+        system("pause");
+    }while(pilih>3||pilih<1);
 }
 
-void topup(){
-    system("cls");
-    cout << setfill('=') << setw(40) << "=" << endl;
-    cout << setfill(' ') << setw(16) << " " << "TOP UP" << endl;
-    cout << setfill('=') << setw(40) << "=" << endl;
-    for (int i = 0; i < 6; i++)
-    {
-        cout << i+1 << ". " << topUp[i] << endl;
-    }
-    
+void tambahSaldo(){
 
 }
